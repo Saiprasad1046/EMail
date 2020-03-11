@@ -1,0 +1,8 @@
+stage ('checkout'){
+    node ('master'){
+         sh 'ls'
+    }
+}
+stage('Send email') {
+    emailext body: 'status', subject: 'jenkins build  notification', to: 'bollinamanoj26@gmail.com'
+}
